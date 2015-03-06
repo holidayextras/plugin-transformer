@@ -10,7 +10,7 @@ A simple HAPI plugin that wraps [Transformer](https://bitbucket.org/hxshortbreak
 
 If you want to work on this repo you will need to install the dependencies
 ```
-$ npm install git+ssh://git@bitbucket.org/hxshortbreaks/plugin-transformer.git
+$ npm install git+ssh://git@github.com/holidayextras/plugin-transformer.git
 ```
 
 then in your file,
@@ -23,27 +23,12 @@ var pluginTransformer = require( 'plugin-transformer' );
 
 This plugin conforms to our standard plugin/promise interface defined [here](https://bitbucket.org/hxshortbreaks/the-works/src/master/docs/PLUGINS.md) (see 'Promises')
 
-#### EditorConfig
-
-EditorConfig helps us define and maintain consistent coding styles between different editors and IDEs.  If you are using Sublime Editor you can install the `EditorConfig` using [Package Control](https://sublime.wbond.net).
-
-For non Sublime development a bunch of other IDE plugins are available [here](http://editorconfig.org/#download)
-
 ```
 
-## Notes on coding style
+## Contributing
 
-Code is linted by ".jshintrc" and checked against the coding style guide "shortbreaks.jscs.json" when you run the default grunt task:
-```
-$ grunt
-```
-
-## Tests
-
-Tests will run using the default grunt task but can also be called stand-alone using:
-```
-$ grunt test
+Code is linted by ".jshintrc" and checked against the coding style guide "shortbreaks.jscs.json". We also use Mocha to test our code, to run all of this use ` $ grunt test `.
 
 ## License
-Copyright (c) 2014 Shortbreaks
+Copyright (c) 2015 Shortbreaks
 Licensed under the MIT license.
