@@ -4,7 +4,7 @@
 
 ## About
 
-A simple HAPI plugin that wraps [Transformer](https://bitbucket.org/hxshortbreaks/transformer) exposing it's solitary `get()` function
+A [hapi](http://hapijs.com/) plugin that wraps [Transformer](https://bitbucket.org/hxshortbreaks/transformer) exposing it's solitary ` get() ` function
 
 ## Getting Started
 
@@ -23,11 +23,9 @@ var pluginTransformer = require( 'plugin-transformer' );
 
 This plugin conforms to our standard plugin/promise interface defined [here](https://bitbucket.org/hxshortbreaks/the-works/src/master/docs/PLUGINS.md) (see 'Promises')
 
-```
-
 ## Contributing
 
-Code is linted by ".jshintrc" and checked against the coding style guide "shortbreaks.jscs.json". We also use Mocha to test our code, to run all of this use ` $ grunt test `.
+Code is linted by '.jshintrc' and checked against the coding style guide 'shortbreaks.jscs.json'. We also use Mocha to test our code, to run all of this use ` $ grunt test `.
 
 ## License
 Copyright (c) 2015 Shortbreaks

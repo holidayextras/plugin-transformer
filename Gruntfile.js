@@ -1,14 +1,6 @@
 /* jslint node: true */
 'use strict';
 
-/*
-* @name /Gruntfile.js
-* @description Le Gruntfile...
-*              keep this tidy, alphabeticised etc
-* @since Thu Jun 12 2014
-* @author Kevin Hodges <kevin.hodges@holidayextras.com>
-*/
-
 module.exports = function( grunt ) {
 
 	// project configuration
