@@ -1,6 +1,6 @@
 # plugin-transformer
 
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[ ![Codeship Status for holidayextras/harvest](https://codeship.com/projects/364463a0-a952-0132-8961-52627b42595c/status?branch=master)](https://codeship.com/projects/67649)
 
 ## About
 
