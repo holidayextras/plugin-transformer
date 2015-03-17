@@ -20,7 +20,7 @@ describe( 'pluginTransformer', function() {
 		// Need to start up a server
 		server = new Hapi.Server();
 
-		// Stub out the startReplication call
+		// Stub out the startReplication and get calls
 		PluginTransformer.__set__( 'Transformer', function() {
 			return {
 				startReplication: function() {
