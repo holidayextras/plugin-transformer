@@ -1,4 +1,4 @@
 node_modules
-fallback
 npm-debug.log
+transformer
 coverage

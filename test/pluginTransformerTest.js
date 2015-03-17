@@ -7,6 +7,8 @@ var should;
 should = chai.should();
 var Hapi = require( 'hapi' );
 var Q = require( 'q' );
+var rewire = require( 'rewire' );
+var PluginTransformer = rewire( '../lib/pluginTransformer' );
 
 var server;
 
@@ -15,9 +17,17 @@ describe( 'pluginTransformer', function() {
 	before( function( done ) {
 		// Need to start up a server
 		server = new Hapi.Server();
-
 		// and then register this plugin to that server
-		server.pack.register( require( '../lib/pluginTransformer' ), function() {
+		server.pack.register( PluginTransformer, function() {
+			// Stub out the startReplication call
+			PluginTransformer.__set__( 'Transformer', function() {
+				return {
+					startReplication: function() {
+						// Don't really do anything, just simulate the call completing
+						return Q.resolve();
+					}
+				};
+			} );
 			done();
 		} );
 	} );
@@ -29,19 +39,19 @@ describe( 'pluginTransformer', function() {
 		} );
 	} );
 
-	describe( '#get', function() {
+	describe( '#getConfiguration', function() {
 
 		it( 'should expose get as a function', function( done ) {
-			server.plugins['plugin-transformer'].get.should.be.a( 'function' );
+			server.plugins['plugin-transformer'].getConfiguration.should.be.a( 'function' );
 			done();
 		} );
 
 		it( 'get should return a promise', function() {
-			Q.isPromise( server.plugins['plugin-transformer'].get() ).should.be.ok;
+			Q.isPromise( server.plugins['plugin-transformer'].getConfiguration() ).should.be.ok;
 		} );
 
 		it( 'should fail when the options parameter is not passed', function() {
-			return server.plugins['plugin-transformer'].get()
+			return server.plugins['plugin-transformer'].getConfiguration()
 			.then( function() {
 			}, function( error ) {
 				error.should.have.property( 'error' ).that.is.an.instanceof( Error );

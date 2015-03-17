@@ -1,3 +1,5 @@
+## **1.0.0**
+- [**WEB-4318**](https://hxshortbreaks.atlassian.net/browse/WEB-4318) We now start replication ourselves as opposed to allowing consumers to do it.
 ## **0.2.1**
 - [**WEB-4542**](https://hxshortbreaks.atlassian.net/browse/WEB-4542) Upgrade coding styles to current level.
 ## **0.2.0**
