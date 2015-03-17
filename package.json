@@ -17,7 +17,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "grunt test && istanbul cover _mocha -- test/ -R spec"
+    "test": "istanbul cover _mocha -- --recursive test/**/*Test.js -R spec"
   },
   "dependencies": {
     "transformer": "git+ssh://git@bitbucket.org/hxshortbreaks/transformer.git#pouch",
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "chai": "1.9.1",
+    "chai-as-promised": "4.3.0",
     "coveralls": "2.11.1",
     "grunt": "0.4.5",
     "grunt-contrib-jshint": "0.11.0",
