@@ -17,7 +17,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "istanbul cover _mocha -- --recursive test/**/*Test.js -R spec"
+    "test": "grunt jshint && grunt jscs && istanbul cover _mocha -- --recursive test/ -R spec"
   },
   "dependencies": {
     "transformer": "git+ssh://git@bitbucket.org/hxshortbreaks/transformer.git#pouch",
