@@ -1,6 +1,6 @@
 # plugin-transformer
 
-[ ![Codeship Status for holidayextras/plugin-transformer](https://codeship.com/projects/364463a0-a952-0132-8961-52627b42595c/status?branch=master)](https://codeship.com/projects/67646)
+[![Build Status](https://api.shippable.com/projects/54ff09505ab6cc135296f99f/badge?branchName=master)](https://app.shippable.com/projects/54ff09505ab6cc135296f99f/builds/latest)
 
 ## About
 
