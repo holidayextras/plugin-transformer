@@ -25,7 +25,7 @@ env:
   global:
     - SLACK_CHANNEL=#ci-cd
     # SLACK_WEBHOOK
-    - secure: QNcJCsj18dllIWZkW3WPMnrIpGyTx00kB8KHyu8n4Fb1HSJuwL1CTCviNO1HJ4n6Xd7qDN1nhsduJ6hoXni4Dld5ELLM5FoFQrwlNED2iDG6UzqauGjgtc1jmFnzBjf6K9qX3qDLHvbqO4aidkv+iH12kx/DSg083QE5GWZAk+P+QKUJMUBcbEcmT3AWahbEDEz+VdzRSch4pSMj+vEX+NhKacMWAkl4ju0CimN1payWJmqFvlTTVkJIHb1gLYEcg1ITI66AYZ98AdBTqme0SpDGoM6w7vjxzssPswidkv+4mByIGznzETHz2rtLPQQCvPNcMzeLKMQ4DHZyazkXDQ==
+		- secure: hXVEupfO2c9Wnx+lGw0tvN0A83XymNgi6x9QaHvAN8xUyeqAKzsCXjP9nGbWtkNPpAucCbo3qZz6zMWKncsZKiM2rnuYQ2mU+m95n5CNvqoD2JWPXyX8Sz2kUVoFcZ20EB05KVRTv9IHqv0dWkdlvafLCR2HVZ3UJJhH0gjQBGJqNlhbJKS8j+n3JV20AoIPg4sy3LGJWoZgfpGVXlhXANgt9RKw3QfZibeHGNAR97Q+StLZJG6VoK1+jv9U78CY4RzsmU93LYuZCI5V6hOGR0CLo7jv1ggpvGffdpRig1XtQWEC4cIUhRlqurxYaRReZnHoFIdjTmnjBQg2eUnoqQ==
 
 # install tools for AWS access and then zip (minus package.json to stop the auto npm install on server) and push to our S3 bucket
 after_success:
