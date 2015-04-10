@@ -1,0 +1,35 @@
+# Language setting
+language: node_js
+
+# Version number
+node_js:
+  - 0.10.30
+
+# Create directories for test and coverage reports
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+  - export XUNIT_FILE=shippable/testresults/results.xml
+  - npm install istanbul -g
+
+# Running the tests with npm
+script:
+  - grunt jshint
+  - grunt jscs
+  - istanbul cover _mocha -- --recursive test/**/*Test.js -R xunit > shippable/testresults/results.xml
+  - istanbul report cobertura --dir  shippable/codecoverage/
+
+# Setup our environment with the IAM credentials
+# we're using IAM user "shippable"
+env:
+  global:
+    - SLACK_CHANNEL=#ci-cd
+    # SLACK_WEBHOOK
+    - secure: QNcJCsj18dllIWZkW3WPMnrIpGyTx00kB8KHyu8n4Fb1HSJuwL1CTCviNO1HJ4n6Xd7qDN1nhsduJ6hoXni4Dld5ELLM5FoFQrwlNED2iDG6UzqauGjgtc1jmFnzBjf6K9qX3qDLHvbqO4aidkv+iH12kx/DSg083QE5GWZAk+P+QKUJMUBcbEcmT3AWahbEDEz+VdzRSch4pSMj+vEX+NhKacMWAkl4ju0CimN1payWJmqFvlTTVkJIHb1gLYEcg1ITI66AYZ98AdBTqme0SpDGoM6w7vjxzssPswidkv+4mByIGznzETHz2rtLPQQCvPNcMzeLKMQ4DHZyazkXDQ==
+
+# install tools for AWS access and then zip (minus package.json to stop the auto npm install on server) and push to our S3 bucket
+after_success:
+  - python slackNotifier.py -s
+
+after_failure:
+  - python slackNotifier.py
