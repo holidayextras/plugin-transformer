@@ -28,7 +28,7 @@ env:
     - secure: hXVEupfO2c9Wnx+lGw0tvN0A83XymNgi6x9QaHvAN8xUyeqAKzsCXjP9nGbWtkNPpAucCbo3qZz6zMWKncsZKiM2rnuYQ2mU+m95n5CNvqoD2JWPXyX8Sz2kUVoFcZ20EB05KVRTv9IHqv0dWkdlvafLCR2HVZ3UJJhH0gjQBGJqNlhbJKS8j+n3JV20AoIPg4sy3LGJWoZgfpGVXlhXANgt9RKw3QfZibeHGNAR97Q+StLZJG6VoK1+jv9U78CY4RzsmU93LYuZCI5V6hOGR0CLo7jv1ggpvGffdpRig1XtQWEC4cIUhRlqurxYaRReZnHoFIdjTmnjBQg2eUnoqQ==
 
 after_success:
-  - python slackNotifier.py -s
+  - python node_modules/make-up/notifiers/shippableToSlack.py -s
 
 after_failure:
-  - python slackNotifier.py
+  - python node_modules/make-up/notifiers/shippableToSlack.py
