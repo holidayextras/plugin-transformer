@@ -1,6 +1,6 @@
 # plugin-transformer
 
-[![Build Status](https://api.shippable.com/projects/54ff09505ab6cc135296f99f/badge?branchName=master)](https://app.shippable.com/projects/54ff09505ab6cc135296f99f/builds/latest)
+[![Circle CI](https://circleci.com/gh/holidayextras/plugin-transformer/tree/master.svg?style=svg)](https://circleci.com/gh/holidayextras/plugin-transformer/tree/master)
 
 ## About
 
