@@ -2,9 +2,8 @@
 'use strict';
 
 var chai = require( 'chai' );
-var chaiAsPromised = require( 'chai-as-promised' );
-chai.use( chaiAsPromised );
-chai.should();
+chai.use( require( 'chai-as-promised' ) );
+var expect = chai.expect;
 var Hapi = require( 'hapi' );
 var Q = require( 'q' );
 var rewire = require( 'rewire' );
@@ -41,7 +40,7 @@ describe( 'pluginTransformer', function() {
 
   describe( '#register', function() {
     it( 'should allow us to access the plugin off the hapi server', function( done ) {
-      server.plugins['plugin-transformer'].should.not.be.undefined;
+      expect( server.plugins['plugin-transformer'] ).to.not.be.undefined;
       done();
     } );
   } );
@@ -49,26 +48,26 @@ describe( 'pluginTransformer', function() {
   describe( '#getConfiguration', function() {
 
     it( 'should expose get as a function', function( done ) {
-      server.plugins['plugin-transformer'].getConfiguration.should.be.a( 'function' );
+      expect( server.plugins['plugin-transformer'].getConfiguration ).to.be.a( 'function' );
       done();
     } );
 
     it( 'get should return a promise', function() {
-      Q.isPromise( server.plugins['plugin-transformer'].getConfiguration() ).should.be.ok;
+      expect( Q.isPromise( server.plugins['plugin-transformer'].getConfiguration() ) ).to.be.ok;
     } );
 
     it( 'should fail when the options parameter is not passed', function() {
       return server.plugins['plugin-transformer'].getConfiguration()
       .then( function() {
       }, function( error ) {
-        error.should.have.property( 'error' ).that.is.an.instanceof( Error );
-        error.error.message.should.equal( 'invalid options' );
-        error.should.have.property( 'origin' ).that.is.equal( 'pluginTransformer' );
+        expect( error ).to.have.property( 'error' ).that.is.an.instanceof( Error );
+        expect( error.error.message ).to.equal( 'invalid options' );
+        expect( error ).to.have.property( 'origin' ).that.is.equal( 'pluginTransformer' );
       } );
     } );
 
     it( 'should return a result when options are valid', function() {
-      return server.plugins['plugin-transformer'].getConfiguration( {} ).should.eventually.deep.equal( {
+      return expect( server.plugins['plugin-transformer'].getConfiguration( {} ) ).to.eventually.deep.equal( {
         big: 'oleTest'
       } );
     } );
