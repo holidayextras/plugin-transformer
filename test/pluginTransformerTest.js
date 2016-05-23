@@ -47,11 +47,6 @@ describe( 'pluginTransformer', function() {
 
   describe( '#getConfiguration', function() {
 
-    it( 'should expose get as a function', function( done ) {
-      expect( server.plugins['plugin-transformer'].getConfiguration ).to.be.a( 'function' );
-      done();
-    } );
-
     it( 'get should return a promise', function() {
       expect( Q.isPromise( server.plugins['plugin-transformer'].getConfiguration() ) ).to.be.ok;
     } );

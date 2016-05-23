@@ -15,6 +15,8 @@ test:
     - istanbul cover _mocha --  --timeout 15000 --recursive test/**/*Test.js -R xunit > $CIRCLE_TEST_REPORTS/unit/results.xml
   post:
     - cp -r ./coverage/ $CIRCLE_ARTIFACTS/coverage
+    - echo "$GRAPHITE_API_KEY.counters.$CIRCLE_PROJECT_REPONAME.production.test.coverage `./node_modules/.bin/coverage-percentage ./coverage/lcov.info --lcov`" | nc -uw0 carbon.hostedgraphite.com 2003
+    - rm -rf transformer transformer-mr*
 deployment:
   production:
     branch: master
