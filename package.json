@@ -34,12 +34,15 @@
     "coverage-percentage": "0.0.2",
     "coveralls": "3.0.0",
     "deployment-helpers": "git+ssh://git@github.com:holidayextras/deployment-helpers.git",
-    "hapi": "17.1.1",
+    "hapi": "17.x.x",
     "istanbul": "1.1.0-alpha.1",
     "make-up": "^10.0.0",
     "mocha": "4.0.1",
     "rewire": "3.0.2",
     "standard": "^10.0.3"
+  },
+  "peerDependencies": {
+    "hapi": "^17.x.x"
   },
   "standard": {
     "globals": [
