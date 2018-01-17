@@ -1,7 +1,7 @@
 {
   "name": "plugin-transformer",
-  "description": "Transformer wrapper for hapi.js",
-  "version": "3.0.1",
+  "description": "Transformer wrapper that allows hapi.js to check payment cards using the 6 digit IIN code",
+  "version": "4.0.0",
   "homepage": "https://github.com/holidayextras/plugin-transformer",
   "author": {
     "name": "Shortbreaks",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "main": "lib/pluginTransformer",
   "engines": {
-    "node": ">= 6.10.3"
+    "node": ">= 8.9.3"
   },
   "scripts": {
     "lint": "standard",
@@ -34,12 +34,15 @@
     "coverage-percentage": "0.0.2",
     "coveralls": "3.0.0",
     "deployment-helpers": "git+ssh://git@github.com:holidayextras/deployment-helpers.git",
-    "hapi": "16.1.1",
-    "istanbul": "^0.4.3",
+    "hapi": "17.x.x",
+    "istanbul": "1.1.0-alpha.1",
     "make-up": "^10.0.0",
     "mocha": "4.0.1",
     "rewire": "3.0.2",
-    "standard": "^10.0.2"
+    "standard": "^10.0.3"
+  },
+  "peerDependencies": {
+    "hapi": "^17.x.x"
   },
   "standard": {
     "globals": [

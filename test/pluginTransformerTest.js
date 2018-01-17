@@ -12,7 +12,7 @@ var PluginTransformer = rewire('../lib/pluginTransformer')
 var server
 
 describe('pluginTransformer', function () {
-  before(function (done) {
+  before(async function () {
     // Need to start up a server
     server = new Hapi.Server()
 
@@ -32,9 +32,7 @@ describe('pluginTransformer', function () {
     })
 
     // and then register this plugin to that server
-    server.register(PluginTransformer, function () {
-      done()
-    })
+    await server.register(PluginTransformer)
   })
 
   describe('#register', function () {
