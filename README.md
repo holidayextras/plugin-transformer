@@ -1,7 +1,5 @@
 # plugin-transformer
 
-[![Circle CI](https://circleci.com/gh/holidayextras/plugin-transformer/tree/master.svg?style=svg&circle-token=26ea1e706a961aa3316251c4de5264a20876d50c)](https://circleci.com/gh/holidayextras/plugin-transformer)
-
 ## About
 
 A [hapi](http://hapijs.com/) plugin that wraps [Transformer](https://bitbucket.org/hxshortbreaks/transformer) exposing it's solitary ` getConfiguration() ` function
