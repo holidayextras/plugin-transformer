@@ -22,7 +22,8 @@
     "pretest": "npm run prerelease",
     "test": "npm run lint && npm run test:coverage",
     "test:coverage": "istanbul cover _mocha",
-    "posttest": "istanbul check-coverage"
+    "posttest": "istanbul check-coverage",
+    "deploy": "exit 0"
   },
   "dependencies": {
     "transformer": "git+ssh://git@github.com:holidayextras/transformer.git#v8.1.0",
@@ -50,5 +51,8 @@
       "describe",
       "before"
     ]
-  }
+  },
+  "owner": "sb-backoffice",
+  "platform": "custom",
+  "ci": "dockyard"
 }
