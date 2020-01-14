@@ -27,24 +27,24 @@
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
-    "transformer": "git+ssh://git@github.com:holidayextras/transformer.git#v8.1.0",
+    "transformer": "git+ssh://git@github.com:holidayextras/transformer.git#v9.2.1",
     "q": "1.5.1"
   },
   "devDependencies": {
-    "chai": "4.1.2",
+    "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
     "coverage-percentage": "0.0.2",
-    "coveralls": "3.0.0",
+    "coveralls": "3.0.9",
     "deployment-helpers": "git+ssh://git@github.com:holidayextras/deployment-helpers.git",
     "hapi": "17.x.x",
     "istanbul": "1.1.0-alpha.1",
     "make-up": "^10.0.0",
-    "mocha": "4.0.1",
-    "rewire": "3.0.2",
-    "standard": "^10.0.3"
+    "mocha": "7.0.0",
+    "rewire": "4.0.1",
+    "standard": "^14.3.1"
   },
   "peerDependencies": {
-    "hapi": "^17.x.x"
+    "hapi": "^18.x.x"
   },
   "standard": {
     "globals": [
