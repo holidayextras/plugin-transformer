@@ -27,7 +27,7 @@
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
-    "transformer": "git+ssh://git@github.com:holidayextras/transformer.git#v9.2.1",
+    "transformer": "git+ssh://git@github.com:holidayextras/transformer.git#FOUND-185",
     "q": "1.5.1"
   },
   "devDependencies": {
