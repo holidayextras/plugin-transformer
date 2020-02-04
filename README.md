@@ -19,6 +19,20 @@ var pluginTransformer = require( 'plugin-transformer' );
 
 ### Registering with the server
 
+This plugin conforms to the [hapijs plugin interface](http://hapijs.com/api#plugin-interface).
+
+While bootstrapping your Hapi server, include the plugin like so:
+
+```
+server.pack.register( [
+	require( 'plugin-harvest' )
+], function() {
+	server.start( function() {
+		console.log( 'server started with plugin-harvest plugin initialised' );
+	} );
+} );
+```
+
 This plugin conforms to our standard plugin/promise interface defined [here](https://bitbucket.org/hxshortbreaks/the-works/src/master/docs/PLUGINS.md) (see 'Promises')
 
 ## Contributing
