@@ -27,7 +27,7 @@
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
-    "transformer-sdk": "github:holidayextras/transformer-sdk#v4.6.2",
+    "transformer-sdk": "github:holidayextras/transformer-sdk#HBMTA-1365",
     "q": "1.5.1"
   },
   "devDependencies": {
