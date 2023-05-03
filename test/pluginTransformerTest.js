@@ -1,15 +1,15 @@
 /* eslint no-unused-expressions:0 */
 'use strict'
 
-var chai = require('chai')
+const chai = require('chai')
 chai.use(require('chai-as-promised'))
-var expect = chai.expect
-var Hapi = require('hapi')
-var Q = require('q')
-var rewire = require('rewire')
-var PluginTransformer = rewire('../lib/pluginTransformer')
+const expect = chai.expect
+const Hapi = require('@hapi/hapi')
+const Q = require('q')
+const rewire = require('rewire')
+const PluginTransformer = rewire('../lib/pluginTransformer')
 
-var server
+let server
 
 describe('pluginTransformer', function () {
   before(async function () {
@@ -49,12 +49,12 @@ describe('pluginTransformer', function () {
 
     it('should fail when the options parameter is not passed', function () {
       return server.plugins['plugin-transformer'].getConfiguration()
-      .then(function () {
-      }, function (error) {
-        expect(error).to.have.property('error').that.is.an.instanceof(Error)
-        expect(error.error.message).to.equal('invalid options')
-        expect(error).to.have.property('origin').that.is.equal('pluginTransformer')
-      })
+        .then(function () {
+        }, function (error) {
+          expect(error).to.have.property('error').that.is.an.instanceof(Error)
+          expect(error.error.message).to.equal('invalid options')
+          expect(error).to.have.property('origin').that.is.equal('pluginTransformer')
+        })
     })
 
     it('should return a result when options are valid', function () {
