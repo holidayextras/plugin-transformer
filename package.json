@@ -39,7 +39,7 @@
     "@hapi/hapi": "^21.3.1",
     "istanbul": "1.1.0-alpha.1",
     "make-up": "^10.0.0",
-    "mocha": "4.0.1",
+    "mocha": "10.2.0",
     "rewire": "3.0.2",
     "standard": "^17.0.0"
   },
